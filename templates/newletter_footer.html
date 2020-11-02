@@ -1,0 +1,159 @@
+{% load staticfiles %}
+
+<!--== Start Newsletter Area ==-->
+<div class="newsletter-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 m-auto">
+                <!-- Newsletter Content Start -->
+                <div class="newsletter-content-wrap text-center text-lg-left d-lg-flex">
+                    <h2><i class="fa fa-envelope-square"></i> Sign up for Newsletter</h2>
+                    <div class="newsletter-form-wrap">
+                        <form id="subscribe-form" action="assets/php/subscribe.php" method="post">
+                            <input type="email" name="newsletter_email" id="address" placeholder="Enter Your Email Address" required />
+                            <button class="btn" type="submit">Subscribe</button>
+                        </form>
+                        <!-- Show Error & Success Message -->
+                        <div id="subscribeResult"></div>
+                    </div>
+                </div>
+                <!-- Newsletter Content End -->
+            </div>
+
+            <div class="col-lg-3 m-auto text-center text-lg-right">
+                <!-- Social Icons Area Start -->
+                <div class="social-icons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                </div>
+                <!-- Social Icons Area End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Newsletter Area ==-->
+
+<!--== Start Footer Area ==-->
+<footer id="footer-area">
+    <!-- Footer Widget Area Start -->
+    <div class="footer-widget-area">
+        <div class="container">
+            <div class="footer-widget-content">
+                <div class="row">
+                    <!-- Single Widget-item Start -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-widget-item">
+                            <h3 class="widget-title">About Market</h3>
+                            <div class="widget-body">
+                                <ul class="footer-list">
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Order History</a></li>
+                                    <li><a href="#">Returns</a></li>
+                                    <li><a href="#">Specials</a></li>
+                                    <li><a href="#">Site Map</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Widget-item End -->
+
+                    <!-- Single Widget-item Start -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-widget-item">
+                            <h3 class="widget-title">Customer Service</h3>
+                            <div class="widget-body">
+                                <ul class="footer-list">
+                                    <li><a href="#">Returns</a></li>
+                                    <li><a href="#">Order History</a></li>
+                                    <li><a href="#">My Account</a></li>
+                                    <li><a href="#">Site Map</a></li>
+                                    <li><a href="#">Specials</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Widget-item End -->
+
+                    <!-- Single Widget-item Start -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-widget-item">
+                            <h3 class="widget-title">Information</h3>
+                            <div class="widget-body">
+                                <ul class="footer-list">
+                                    <li><a href="#">Order History</a></li>
+                                    <li><a href="#">Site Map</a></li>
+                                    <li><a href="#">Returns</a></li>
+                                    <li><a href="#">Specials</a></li>
+                                    <li><a href="#">My Account</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Widget-item End -->
+
+                    <!-- Single Widget-item Start -->
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-widget-item">
+                            <h3 class="widget-title">Contact Us</h3>
+                            <div class="widget-body">
+                                <div class="contact-info">
+                                    <div class="single-contact-info">
+                                    <span class="contact-icon">
+                                        <i class="fa fa-home"></i>
+                                    </span>
+                                        <a href="mailto:your@example.com" class="contact-text">
+                                            <strong>Address:</strong> 15/C, Uttara, Dhaka
+                                        </a>
+                                    </div>
+                                    <div class="single-contact-info">
+                                    <span class="contact-icon">
+                                        <i class="fa fa-phone"></i>
+                                    </span>
+                                        <a href="mailto:your@example.com" class="contact-text">
+                                            <strong>Phone:</strong> (+1) 866-540-3229
+                                        </a>
+                                    </div>
+                                    <div class="single-contact-info">
+                                    <span class="contact-icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
+                                        <a href="mailto:your@example.com" class="contact-text">
+                                            <strong>Email:</strong> your@email.here
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single Widget-item End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Widget Area End -->
+
+    <!-- Footer Bottom Area -->
+    <div class="footer-bttom-area">
+        <div class="container">
+            <div class="row">
+                <!-- Copyright Text Area -->
+                <div class="col-md-6 m-auto text-center text-md-left order-last order-md-first">
+                    <p>Copyright © 2018 <a href="http://www.bootstrapmb.com/">HasTech</a>. All rights reserved.</p>
+                </div>
+                <!-- Copyright Text Area -->
+
+                <!-- Payment Method Area -->
+                <div class="col-md-6 m-auto text-center text-md-right">
+                    <div class="payment-support">
+                        <img src="../../static/myshop/img/payment.png" alt="Payment" class="d-inline-block" />
+                    </div>
+                </div>
+                <!-- Payment Method Area -->
+            </div>
+        </div>
+    </div>
+    <!-- Footer Bottom Area -->
+</footer>
+<!--== End Footer Area ==-->

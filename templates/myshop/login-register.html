@@ -1,0 +1,239 @@
+﻿{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}
+    <title>登录-注册</title>
+{% endblock %}
+
+{% block main_body %}
+
+{% include 'header_login.html' %}
+
+<!--== Start Page Breadcrumb ==-->
+<div class="page-breadcrumb-wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="page-breadcrumb">
+                    <ul class="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="shop.html" class="active">Member Area</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== End Page Breadcrumb ==-->
+
+<!--== Page Content Wrapper Start ==-->
+<div id="page-content-wrapper">
+    <div class="container">
+        <div class="member-area-from-wrap">
+            <div class="row">
+                <!-- Login Content Start -->
+                <div class="col-lg-5">
+                    <div class="login-reg-form-wrap  pr-lg-50">
+                        <h2>Already a Member?</h2>
+
+                        <form action="{% url 'users:login_index' %}" method="post">
+                            {% csrf_token %}
+                            <div class="single-input-item">
+                                <input name="email" type="email" placeholder="Email or Username" required />
+                            </div>
+
+                            <div class="single-input-item">
+                                <input name="password" type="password" placeholder="Enter your Password" required />
+                            </div>
+
+                            <div class="single-input-item">
+                                <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
+                                    <div class="remember-meta">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="rememberMe">
+                                            <label class="custom-control-label" for="rememberMe">Remember Me</label>
+                                        </div>
+                                    </div>
+
+                                    <a href="#" class="forget-pwd">Forget Password?</a>
+                                </div>
+                            </div>
+
+                            <div class="single-input-item">
+                                <button class="btn">Login</button>{{ login_result }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Login Content End -->
+
+                <!-- Register Content Start -->
+                <div class="col-lg-7 mt-30 mt-lg-0">
+                    <div class="login-reg-form-wrap">
+                        <h2>Singup Form</h2>
+                        <form action="{% url 'users:register' %}" method="post">
+                            {% csrf_token %}
+                            <div class="single-input-item">
+                                {{ register_form.first_name }} {{ register_form.errors.first_name }}
+{#                                 <input name="first_name" type="text" placeholder="Full Name" required />#}
+                            </div>
+
+                            <div class="single-input-item">
+                                {{ register_form.email }} {{ register_form.errors.email }}
+{#                                <input name="email" type="email" placeholder="Enter your Email" required />#}
+                            </div>
+
+                            <div class="single-input-item">
+                                {{ register_form.username }} {{ register_form.errors.username }}
+{#                                <input name="username" type="text" placeholder="Choose yur Username" required />#}
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="single-input-item">
+                                        {{ register_form.password }} {{ register_form.errors.password }}
+{#                                        <input name="password" type="password" placeholder="Enter your Password" required />#}
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="single-input-item">
+                                        {{ register_form.password2 }} {{ register_form.errors.password2 }}
+{#                                        <input name="password2" type="password" placeholder="Repeat your Password" required />#}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-input-item">
+                                <div class="login-reg-form-meta">
+                                    <div class="remember-meta">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="subnewsletter">
+                                            <label class="custom-control-label" for="subnewsletter">Subscribe Our Newsletter</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="single-input-item">
+                                <button class="btn">Register</button>{{ register_result }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Register Content End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!--== Page Content Wrapper End ==-->
+
+{% include 'newletter_footer.html' %}
+
+<!-- Scroll to Top Start -->
+<a href="#" class="scrolltotop"><i class="fa fa-angle-up"></i></a>
+<!-- Scroll to Top End -->
+
+<!--== Product Quick View Modal Area Wrap ==-->
+<div class="modal" id="quickView" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><img src="../../static/myshop/img/icons/cancel.png" alt="Close" class="img-fluid" /></span>
+            </button>
+            <div class="modal-body">
+                <div class="quick-view-content single-product-page-content">
+                    <div class="row">
+                        <!-- Product Thumbnail Start -->
+                        <div class="col-lg-5 col-md-6">
+                            <div class="product-thumbnail-wrap">
+                                <div class="product-thumb-carousel owl-carousel">
+                                    <div class="single-thumb-item">
+                                        <a href="single-product.html"><img class="img-fluid" src="../../static/myshop/img/single-pro-1.jpg" alt="Product" /></a>
+                                    </div>
+
+                                    <div class="single-thumb-item">
+                                        <a href="single-product.html"><img class="img-fluid" src="../../static/myshop/img/single-pro-2.jpg" alt="Product" /></a>
+                                    </div>
+
+                                    <div class="single-thumb-item">
+                                        <a href="single-product.html"><img class="img-fluid" src="../../static/myshop/img/single-pro-3.jpg" alt="Product" /></a>
+                                    </div>
+
+                                    <div class="single-thumb-item">
+                                        <a href="single-product.html"><img class="img-fluid" src="../../static/myshop/img/single-pro-4.jpg" alt="Product" /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product Thumbnail End -->
+
+                        <!-- Product Details Start -->
+                        <div class="col-lg-7 col-md-6 mt-5 mt-md-0">
+                            <div class="product-details">
+                                <h2><a href="single-product.html">Crown Summit Backpack</a></h2>
+
+                                <div class="rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star-half"></i>
+                                    <i class="fa fa-star-o"></i>
+                                </div>
+
+                                <span class="price">$52.00</span>
+
+                                <div class="product-info-stock-sku">
+                                    <span class="product-stock-status text-success">In Stock</span>
+                                    <span class="product-sku-status ml-5"><strong>SKU</strong> MH03</span>
+                                </div>
+
+                                <p class="products-desc">Ideal for cold-weathered training worked lorem ipsum outdoors, the Chaz Hoodie promises superior warmth with every wear. Thick material blocks out the wind as ribbed cuffs and bottom band seal in body heat Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, reprehenderit.</p>
+                                <div class="shopping-option-item">
+                                    <h4>Color</h4>
+                                    <ul class="color-option-select d-flex">
+                                        <li class="color-item black">
+                                            <div class="color-hvr">
+                                                <span class="color-fill"></span>
+                                                <span class="color-name">Black</span>
+                                            </div>
+                                        </li>
+
+                                        <li class="color-item green">
+                                            <div class="color-hvr">
+                                                <span class="color-fill"></span>
+                                                <span class="color-name">green</span>
+                                            </div>
+                                        </li>
+
+                                        <li class="color-item orange">
+                                            <div class="color-hvr">
+                                                <span class="color-fill"></span>
+                                                <span class="color-name">Orange</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="product-quantity d-flex align-items-center">
+                                    <div class="quantity-field">
+                                        <label for="qty">Qty</label>
+                                        <input type="number" id="qty" min="1" max="100" value="1" />
+                                    </div>
+
+                                    <a href="cart.html" class="btn">Add to Cart</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Product Details End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--== Product Quick View Modal Area End ==-->
+{% endblock %}
+

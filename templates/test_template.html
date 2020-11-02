@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>{{ string }}</h2>
+<ul>
+ {% for i in course_list %}
+ <li>{{ i }}</li>
+ {% endfor %}
+</ul>
+<h2>获取到的字典⾥的信息:</h2>
+{% for key, value in student_info.items %}
+ {{ key }} : {{ value }}<br>
+{% endfor %}
+<h2>⼀组数字</h2>
+{% for i in NumList %}
+ {{ i }}
+{% empty %}
+ 没有数据
+{% endfor %}
+{% if Having_class %}
+<h2>正在上课中 ...</h2>
+{% else %}
+<h2>正在备课中 ...</h2>
+{% endif %}
+{% if request.user.is_authenticated %}
+ {{ request.user.username }}，您好！
+{% else %}
+ 请登陆，这⾥放登陆链接
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"> <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>商品信息</title>
+</head> <body>
+ 商品名称：<br><br>
+ {{ goods_info.goods_name | safe }}<br><br>
+ 商品图片：<br><br>
+ <img src="{{ goods_info.goods_image.url }}"><br><br>
+ 商品价格：<br><br>
+ {{ goods_info.actual_price | safe }}<br><br>
+ 商品信息：<br><br>
+ {{ goods_info.goods_detail | safe }}
+</body>
+</html>
